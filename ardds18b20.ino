@@ -4,9 +4,8 @@
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
 #define TEMPMIN -20
-#define TEMPMAX 44
 #define BARGRAPH
-#define PPD SCREEN_WIDTH/(TEMPMAX-TEMPMIN)
+#define PPD 2 //pixels per degree, must be +ve integer
 #define TICKMIN 5
 #define TICKMAJ 10
 #define SSD1306_DISPLAY
