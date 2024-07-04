@@ -1,5 +1,5 @@
 
-#define VERSION "0.01"
+#define VERSION "0.02"
 #include <Wire.h>
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
@@ -75,10 +75,6 @@ void loop(){
   uint8_t id[8];
   char buf[27];
 
-  display.clearDisplay();
-  display.setTextSize(2);
-  display.setCursor (0,0);
-
   j=1;
   while (ds.selectNext()){
     //for each sensor
@@ -89,6 +85,9 @@ void loop(){
     MySerial.print(buf);
     MySerial.print(temp,2);
     MySerial.println(F(" °"));
+    display.clearDisplay();
+    display.setCursor (0,0);
+    display.setTextSize(2);
     display.print(j);
     display.print(F(": "));
     display.print(temp,1);
@@ -112,5 +111,5 @@ void loop(){
     j++;
     delay(1000);
     }
-  delay(1000);
+  delay(100);
   }
